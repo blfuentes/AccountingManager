@@ -1,1 +1,1 @@
-# AccountingManager
+# Accounting Manager
