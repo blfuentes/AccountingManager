@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Movement]
 (
-    [MovementID] INT NOT NULL PRIMARY KEY, 
+    [MovementID] INT NOT NULL PRIMARY KEY IDENTITY, 
     [IsCredit] BIT NOT NULL, 
     [ActivityID] INT NOT NULL, 
     CONSTRAINT [FK_Movement_ToActivity] FOREIGN KEY ([ActivityID]) REFERENCES [Activity]([ActivityID])

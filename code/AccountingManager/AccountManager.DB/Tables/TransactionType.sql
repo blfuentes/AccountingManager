@@ -1,5 +1,5 @@
-﻿CREATE TABLE [dbo].[MovementType]
+﻿CREATE TABLE [dbo].[TransactionType]
 (
-    [TransactionTypeID] INT NOT NULL PRIMARY KEY, 
+    [TransactionTypeID] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Name] NVARCHAR(255) NOT NULL
 )

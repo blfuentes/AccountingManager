@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[ExpenseModification]
 (
-    [ExpenseModificationID] INT NOT NULL PRIMARY KEY, 
+    [ExpenseModificationID] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Amount] MONEY NOT NULL, 
     [ValidFrom] DATETIME2 NOT NULL, 
     [ExpenseID] INT NOT NULL, 

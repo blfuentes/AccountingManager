@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[ForecastDetail]
 (
-    [ForecastDetailID] INT NOT NULL PRIMARY KEY, 
+    [ForecastDetailID] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Month] INT NOT NULL, 
     [InitialBalance] MONEY NOT NULL, 
     [ExtraExpenses] MONEY NULL, 

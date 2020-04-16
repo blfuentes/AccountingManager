@@ -182,4 +182,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ForecastDetailID" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="70835334-141e-4cf3-bd4f-75d77dc6ce26" ChangeDateTime="04/16/2020 16:03:46">
+    <Property Name="ElementName" Value="[dbo].[Target].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Target]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TargetID" />
+  </Operation>
 </Operations>

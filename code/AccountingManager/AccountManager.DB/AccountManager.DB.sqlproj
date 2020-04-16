@@ -60,6 +60,7 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="Compare" />
+    <Folder Include="Data" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Balance.sql" />
@@ -82,6 +83,7 @@
     <Build Include="Tables\Expense.sql" />
     <Build Include="Tables\ExpenseModification.sql" />
     <Build Include="Tables\ForecastDetail_Expense.sql" />
+    <Build Include="Tables\Target.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AccountManager.DB.refactorlog" />

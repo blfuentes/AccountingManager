@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Account]
 (
-    [AccountID] INT NOT NULL PRIMARY KEY, 
+    [AccountID] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Name] NVARCHAR(255) NOT NULL
 )

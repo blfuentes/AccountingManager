@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[SalaryModification]
 (
-    [SalaryModificationID] INT NOT NULL PRIMARY KEY, 
+    [SalaryModificationID] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Amount] MONEY NOT NULL, 
     [SalaryID] INT NOT NULL, 
     [SalaryModificationTypeID] INT NOT NULL, 

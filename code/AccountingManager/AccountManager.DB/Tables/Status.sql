@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Status]
 (
-    [StatusID] INT NOT NULL PRIMARY KEY, 
+    [StatusID] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Date] DATETIME2 NOT NULL, 
     [Amount] MONEY NOT NULL, 
     [AccountID] INT NOT NULL, 
