@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AccountManager.DB", "AccountManager.DB\AccountManager.DB.sqlproj", "{B319426B-F499-495B-9D8E-0386B71FC78F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountManager.DAL", "AccountManager.DAL\AccountManager.DAL.csproj", "{B0903806-1AD6-452E-88D2-E33931E1202D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountManager.DALTests", "AccountManager.DALTests\AccountManager.DALTests.csproj", "{A69FB577-4B0F-4326-94BC-C44E5F326A3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{B319426B-F499-495B-9D8E-0386B71FC78F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B319426B-F499-495B-9D8E-0386B71FC78F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B319426B-F499-495B-9D8E-0386B71FC78F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B0903806-1AD6-452E-88D2-E33931E1202D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0903806-1AD6-452E-88D2-E33931E1202D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0903806-1AD6-452E-88D2-E33931E1202D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0903806-1AD6-452E-88D2-E33931E1202D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A69FB577-4B0F-4326-94BC-C44E5F326A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69FB577-4B0F-4326-94BC-C44E5F326A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69FB577-4B0F-4326-94BC-C44E5F326A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69FB577-4B0F-4326-94BC-C44E5F326A3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
