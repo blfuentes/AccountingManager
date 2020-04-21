@@ -84,6 +84,7 @@
     <Build Include="Tables\ExpenseModification.sql" />
     <Build Include="Tables\ForecastDetail_Expense.sql" />
     <Build Include="Tables\Target.sql" />
+    <None Include="Data\20200416_InitialData.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AccountManager.DB.refactorlog" />

@@ -14,7 +14,7 @@ namespace AccountManager.DAL.DataService
             // One time configuration
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<OEntity, TEntity>();
+                cfg.CreateMap<OEntity, TEntity>().ReverseMap();
             });
             mapper = config.CreateMapper();
         }
