@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AccountManager.DAL.DataService
 {
-    interface IDataService<Entity> where Entity : class
+    public interface IDataService<Entity> where Entity : class
     {
         Task AddItem(Entity entity);
         Task<Entity> GetItemByID(int id);
