@@ -23,6 +23,16 @@ namespace AccountManager.DAL.DataService
         public BalanceDataService(DbContextOptionsBuilder<AccountManagerContext> optionsBuilder)
         {
             dbContext = new AccountManagerContext(optionsBuilder.Options);
+
+            // custom mapper
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Balance, BalanceDTO>()
+                    .ForMember(dest => dest.MonthSort, source => source.MapFrom(source => source.Date.Month))
+                    .ForMember(dest => dest.MonthName, source => source.MapFrom(source => (new DateTimeFormatInfo()).GetMonthName(source.Date.Month)))
+                    .ReverseMap();
+            });
+            mapper = config.CreateMapper();
         }
 
         public async Task AddItem(BalanceDTO dto)
@@ -36,11 +46,6 @@ namespace AccountManager.DAL.DataService
         {
             var entity = await dbContext.FindAsync(typeof(Balance), id);
             var dto = mapper.Map<BalanceDTO>(entity);
-            if (!(entity is null))
-            {
-                dto.MonthSort = dto.Date.Month;
-                dto.MonthName = (new DateTimeFormatInfo()).GetMonthName(dto.MonthSort);
-            }
 
             return dto;
         }
@@ -49,11 +54,7 @@ namespace AccountManager.DAL.DataService
         {
             var entities = dbContext.Balance;
             var dtos = mapper.Map<ICollection<BalanceDTO>>(entities);
-            foreach(var _d in dtos)
-            {
-                _d.MonthSort = _d.Date.Month;
-                _d.MonthName = (new DateTimeFormatInfo()).GetMonthName(_d.MonthSort);
-            };
+
             return dtos.AsQueryable();
         }
 
@@ -64,11 +65,6 @@ namespace AccountManager.DAL.DataService
             {
                 var dtos = mapper.Map<IList<BalanceDTO>>(entities);
 
-                foreach (var _d in dtos)
-                {
-                    _d.MonthSort = _d.Date.Month;
-                    _d.MonthName = (new DateTimeFormatInfo()).GetMonthName(_d.MonthSort);
-                };
                 return dtos;
             });
 
