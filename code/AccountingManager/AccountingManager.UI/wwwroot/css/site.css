@@ -69,3 +69,40 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* CUSTOM */
+ul li {
+    padding-right: 0.5em;
+}
+
+.btn-purple {
+    color: white;
+    background-color: rebeccapurple;
+    border-color: transparent;
+}
+
+.btn-brown {
+    color: white;
+    background-color: sandybrown;
+    border-color: transparent;
+}
+
+.btn-cleargreen {
+    color: white;
+    background-color: darkgreen;
+    border-color: transparent;
+}
+
+.dropdown-menu .dropdown-item {
+    display: inline-block;
+    color:white;
+    width: 100%;
+    margin:0 0 0.2em 0;
+    background-color:darkseagreen
+}
+
+.container .dropdown .dropdown-menu a:hover {
+    color: #fff;
+    background-color: lightgreen;
+    border-color: #fff;
+}

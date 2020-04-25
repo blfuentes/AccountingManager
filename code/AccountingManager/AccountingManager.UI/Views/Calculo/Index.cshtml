@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewData["Title"] = "Calc. Efectivo";
+
+    //
+    int[] billetes = new int[] { 500, 200, 100, 50, 20, 10, 5 };
+    decimal[] monedas = new decimal[] { 2, 1, 0.5M, 0.2M, 0.1M, 0.05M, 0.02M, 0.01M };
+    int[] amountBilletes = new int[7];
+    int[] amountMonedas = new int[7];
+}
+
+<h1>Calcular efectivo</h1>
+
+<div id="gridCalculator">
+    <div class="row">
+        <div class="col-5 offset-1" style="background-color:red">
+            <p>billetes</p>
+        </div>
+        <div class="col-6" style="background-color:blue">
+            <p>monedas</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5 offset-1" style="background-color:blue">
+            @for (int idx = 0; idx < billetes.Length; idx++)
+            {
+                <div style="float:left; width:@((100.0/billetes.Length).ToString().Replace(",","."))%">@billetes[idx]</div>
+            }
+        </div>
+        <div class="col-6" style="background-color:red">
+            @for (int idx = 0; idx < monedas.Length; idx++)
+            {
+                <div style="float:left; width:@((100.0/monedas.Length).ToString().Replace(",","."))%">@(monedas[idx] < 1 ? (int)(monedas[idx] * 100) : monedas[idx])</div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5 offset-1" style="background-color:red">
+            @for (int idx = 0; idx < billetes.Length; idx++)
+            {
+                <input style="float:left; width:@((100.0/billetes.Length).ToString().Replace(",","."))%">
+            }
+        </div>
+        <div class="col-6" style="background-color:blue">
+            @for (int idx = 0; idx < monedas.Length; idx++)
+            {
+                <input style="float:left; width:@((100.0/monedas.Length).ToString().Replace(",","."))%">
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5 offset-1" style="background-color:blue">
+            @for (int idx = 0; idx < billetes.Length; idx++)
+            {
+                <div style="float:left; width:@((100.0/billetes.Length).ToString().Replace(",","."))%"><p></p></div>
+            }
+        </div>
+        <div class="col-6" style="background-color:red">
+            @for (int idx = 0; idx < monedas.Length; idx++)
+            {
+                <div style="float:left; width:@((100.0/monedas.Length).ToString().Replace(",","."))%"><p></p></div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col offset-1" style="background-color:red">
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1" style="background-color:blue">Total</div>
+        <div class="col-1"></div>
+    </div>
+</div>

@@ -3,27 +3,53 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AccountingManager.UI</title>
+    <title>Cuentas(@DateTime.Now.Year) - @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AccountingManager.UI</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse">
+                    <p class="nav navbar-text navbar-right" style="padding-right:2em">Gestión cuentas: @DateTime.Now.Year</p>
+                    <a class="navbar-brand btn btn-danger text-white" asp-area="" asp-controller="Home" asp-action="Anual">Anual</a>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link btn btn-warning text-white" asp-area="" asp-controller="Balance" asp-action="Index">Balance</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link btn btn-info text-white" asp-area="" asp-controller="Sueldo" asp-action="Index">Sueldo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-purple text-white" asp-area="" asp-controller="Prevision" asp-action="Index">Prevision</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn text-white btn-brown" asp-area="" asp-controller="Calculo" asp-action="Index">Calc. Efectivo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-danger text-white" asp-area="" asp-controller="Tarjeta" asp-action="Index">Tarjeta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white" asp-area="" asp-controller="Regalo" asp-action="Index">Regalos</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle btn btn-cleargreen text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Meses
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                @{
+                                    var esGlobalitazion = System.Globalization.CultureInfo.GetCultureInfo("es-ES");
+                                    for (int month = 1; month <= 12; month++)
+                                    {
+                                        <a class="dropdown-item btn btn-success" asp-area="" asp-controller="Balance" asp-action="Mes" asp-route-monthid=@month>@esGlobalitazion.DateTimeFormat.GetMonthName(month)</a>
+                                    }
+                                }
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -42,6 +68,7 @@
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/popper.js/umd/popper.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
